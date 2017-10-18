@@ -1,51 +1,49 @@
-// var add = function(number1,number2){
-// 	return number1 + number2;
-//
-// };
-//
-// var number1 = parseInt(prompt("Enter a number: "));
-// var number2 = parseInt(prompt("Enter another number: "));
-//
-// alert(add(number1, number2));
-//
-// var subtract = function(number1,number2){
-// 	return number1 - number2;
-//
-// };
-//
-// var number1 = parseInt(prompt("Enter a number: "));
-// var number2 = parseInt(prompt("Enter another number: "));
-//
-// alert(subtract(number1,number2));
-//
-// var multiply = function(number1,number2){
-// 	return number1 * number2;
-//
-// };
-//
-// var number1 = parseInt(prompt("Enter a number: "));
-// var number2 = parseInt(prompt("Enter another number: "));
-//
-// alert(multiply(number1,number2));
-//
-// var divide = function(number1,number2){
-// 	return number1 / number2;
-//
-// };
-//
-// var number1 = parseInt(prompt("Enter a number: "));
-// var number2 = parseInt(prompt("Enter another number: "));
-//
-// alert(divide(number1,number2));
+// Business (or back-end) logic:
+
+var add = function(number1, number2) {
+	return number1 + number2;
+};
+var subtract = function(number1, number2) {
+return number1 - number2;
+};
+
+var multiply = function(number1, number2) {
+return number1 * number2;
+};
+
+var divide = function(number1, number2) {
+return number1 / number2;
+};
+
+//User interface (or front-end) logic:
+
 $(document).ready(function(){
-	$("h1").click(function() {
-		alert("this is a header.");
-		alert("I told you, THIS IS A HEADER");
+	$("#add").click(function(event){
+		event.preventDefault();
+		var number1 = parseInt($("#input1").val());
+		var number2 = parseInt($("#input2").val());
+		var result =add(number1, number2);
+		$("#output").text(result);
 	});
-	$("p").click(function(){
-		alert("This is a paragraph");
+	$("#subtract").click(function(event){
+		event.preventDefault();
+		var number1 = parseInt($("#input1").val());
+		var number2 = parseInt($("#input2").val());
+		var result =subtract(number1, number2);
+		$("#output").text(result);
 	});
-	$("img").click(function(){
-		alert("This is an image");
+	$("#multiply").click(function(event){
+		event.preventDefault();
+		var number1 = parseInt($("#input1").val());
+		var number2 = parseInt($("#input2").val());
+		var result =multiply(number1, number2);
+		$("#output").text(result);
+	});
+	$("#divide").click(function(event){
+		event.preventDefault();
+		var number1 = parseInt($("#input1").val());
+		var number2 = parseInt($("#input2").val());
+		var result =divide(number1, number2);
+		$("#output").text(result);
 	});
 });
